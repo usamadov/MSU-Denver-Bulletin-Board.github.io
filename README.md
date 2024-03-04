@@ -35,3 +35,20 @@ Follow these steps to get the project running on your local machine:
 
    ```bash
    git clone https://github.com/your-username/senior-project.git
+        a) Open the docs/index.html file in your web browser.
+        b) Start exploring and testing the real-time updates and file uploads features.
+
+
+## Contributing
+
+We welcome contributions to enhance and improve our platform. If you have ideas, bug fixes, or new features to propose, please follow our contribution guidelines outlined in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+This project is licensed under the [MIT License](LICENSE), which means you are free to use, modify, and distribute the code as long as you include the original copyright and license notice.
+
+## Acknowledgments
+
+We would like to express our gratitude to everyone who contributed to the project and supported us throughout our senior project journey.
+
+Thank you for exploring our real-time classroom updates platform! Feel free to reach out if you have any questions or feedback.
