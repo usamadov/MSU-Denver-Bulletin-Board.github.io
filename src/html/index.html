@@ -1,4 +1,7 @@
+
+
 <!-- handles login -->
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +22,12 @@
     </style>
 </head>
 <body>
+-->
+
+
+
     <!-- MSU Denver logo -->
+<!--
     <img id="logo" src="assets/images/MSU_Denver_Roadrunners.svg.png" alt="Logo">
     <h1>Teacher Login</h1>
     <form id="loginForm">
@@ -31,3 +39,106 @@
     </form>
 </body>
 </html>
+-->
+
+
+<!-- Design for MSU DEnver Bulleting board webpage--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metropolitan State University of Denver Bulletin Board</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .container {
+            background-color: #0033a0; /* Adjust this background color as needed */
+            width: 100%;
+            min-height: 100vh; /* Ensures the container fills at least the whole height of the viewport */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers children horizontally */
+            position: relative;
+        }
+        .logo-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%; /* Adjust the width as necessary */
+            height: 80px; /* Adjust the height as necessary */
+            background-color: white; /* Change the background color if needed */
+            z-index: 1; /* Keeps the rectangle behind other content */
+            display: flex;
+            justify-content: center; /* Center the bulletin board text horizontally */
+            align-items: center; /* Center the bulletin board text vertically */
+        }
+        .date-time {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 16px; /* Adjust based on your preference */
+            color: black; /* Adjust text color as needed */
+            z-index: 2;
+        }
+        .footer-background {
+            position: absolute;
+            width: 100%; /* Adjust the width as necessary */
+            height: 80px; /* Adjust the height as necessary */
+            background-color: white; /* Change the background color if needed */
+            bottom: 0; /* Adjust the bottom positioning if necessary */
+            z-index: 1; /* Keeps the rectangle behind other content */
+        }
+        .logo {
+            position: absolute;
+            top: 10px; /* Adjust the top positioning of the logo */
+            left: 10px; /* Adjust the left positioning of the logo */
+            z-index: 3; /* Ensures the logo is above the other elements */
+        }
+        .bulletin-board {
+            color: #0033a0; /* Adjust text color as needed */
+            font-size: 42px; /* Adjust the font size as needed */
+            padding: 20px 60px; /* Adjust the padding as needed */
+            text-align: center;
+            border-radius: 5px; /* Adjust the border radius as needed */
+            background-color: transparent; /* Set background color if needed */
+            z-index: 2; /* Ensures the bulletin board is visually above the background rectangles */
+            position: relative; /* Changed to ensure proper placement */
+        }
+        .red-text {
+            color: #d50000; /* Adjust the red color as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-background">
+            <div class="bulletin-board">
+                <span class="red-text">Bulletin</span> Board
+            </div>
+            <div class="date-time" id="date-time"></div>
+        </div> <!-- White rectangle at the top -->
+        <div class="footer-background"></div> <!-- White rectangle at the bottom -->
+        <div class="logo">
+            <img src="https://cdn.offcampusimages.com/public/upload/eagsvcpcbm1vru1k2u_taxmsbsflnehw4ztweyn_sng.png" alt="MSU Denver Logo" width="230"> <!-- Your logo -->
+        </div>
+    </div>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const dateTimeStr = now.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true, month: 'long', day: 'numeric', year: 'numeric' });
+            document.getElementById('date-time').innerHTML = dateTimeStr;
+        }
+        setInterval(updateTime, 1000); // Update the time every second
+        updateTime(); // Initialize with the current time
+    </script>
+
+</body>
+</html>
+
+
+
+
