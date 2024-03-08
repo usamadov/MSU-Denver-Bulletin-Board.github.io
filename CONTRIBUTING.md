@@ -18,7 +18,7 @@ Please follow these guidelines before starting to code your feature or bugfix.
 
 ## Join the community
 
-- Optionally, you could join the [Discord channel](https://discord.gg/4EGXP9MT), so you will hear instantly if something needs to be worked on.
+- Optionally, you could join the [Discord channel](https://discord.gg/RwEByybh42), so you will hear instantly if something needs to be worked on.
 
 ## Guidelines Before Sending Your Pull Request and Making Contributions
 
