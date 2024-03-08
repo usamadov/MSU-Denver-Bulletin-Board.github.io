@@ -2,7 +2,7 @@
 
 ## Overview
 
-Welcome to our senior project repository! This project aims to create a website using GitHub Pages, HTML, and JavaScript to facilitate real-time updates and file uploads for teachers. The platform will provide an intuitive interface for teachers to communicate with their students, share important information, and manage classroom resources seamlessly.
+Welcome to our senior project repository! This project aims to create a website using GitHub Pages, HTML, and JavaScript to facilitate real-time updates from teachers that will be displayed on a bulletin board in the MSU Denver Aerospace and Engineering Sciences 2nd floor hallway. We are using Anthias to display our website on the bulletin board. 
 
 ## Features
 
