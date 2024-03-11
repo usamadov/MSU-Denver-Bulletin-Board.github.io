@@ -42,7 +42,7 @@
 -->
 
 
-<!-- Design for MSU DEnver Bulleting board webpage--->
+<!-- Design for MSU Denver Bulleting board webpage--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,66 +50,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metropolitan State University of Denver Bulletin Board</title>
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-        }
-        .container {
-            background-color: #0033a0; /* Adjust this background color as needed */
-            width: 100%;
-            min-height: 100vh; /* Ensures the container fills at least the whole height of the viewport */
+        /* Your existing styles here */
+
+        /* Additional styles for the login section */
+        .login-container {
+            margin-top: 20px; /* Adjust the margin as needed */
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centers children horizontally */
-            position: relative;
+            align-items: center;
+            color: white; /* Adjust text color for login section */
         }
-        .logo-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%; /* Adjust the width as necessary */
-            height: 80px; /* Adjust the height as necessary */
-            background-color: white; /* Change the background color if needed */
-            z-index: 1; /* Keeps the rectangle behind other content */
-            display: flex;
-            justify-content: center; /* Center the bulletin board text horizontally */
-            align-items: center; /* Center the bulletin board text vertically */
-        }
-        .date-time {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 16px; /* Adjust based on your preference */
-            color: black; /* Adjust text color as needed */
-            z-index: 2;
-        }
-        .footer-background {
-            position: absolute;
-            width: 100%; /* Adjust the width as necessary */
-            height: 80px; /* Adjust the height as necessary */
-            background-color: white; /* Change the background color if needed */
-            bottom: 0; /* Adjust the bottom positioning if necessary */
-            z-index: 1; /* Keeps the rectangle behind other content */
-        }
-        .logo {
-            position: absolute;
-            top: 10px; /* Adjust the top positioning of the logo */
-            left: 10px; /* Adjust the left positioning of the logo */
-            z-index: 3; /* Ensures the logo is above the other elements */
-        }
-        .bulletin-board {
-            color: #0033a0; /* Adjust text color as needed */
-            font-size: 42px; /* Adjust the font size as needed */
-            padding: 20px 60px; /* Adjust the padding as needed */
-            text-align: center;
-            border-radius: 5px; /* Adjust the border radius as needed */
-            background-color: transparent; /* Set background color if needed */
-            z-index: 2; /* Ensures the bulletin board is visually above the background rectangles */
-            position: relative; /* Changed to ensure proper placement */
-        }
-        .red-text {
-            color: #d50000; /* Adjust the red color as needed */
+        .login-container label,
+        .login-container input {
+            margin-bottom: 10px; /* Adjust the margin as needed */
         }
     </style>
 </head>
@@ -125,19 +78,38 @@
         <div class="logo">
             <img src="https://cdn.offcampusimages.com/public/upload/eagsvcpcbm1vru1k2u_taxmsbsflnehw4ztweyn_sng.png" alt="MSU Denver Logo" width="230"> <!-- Your logo -->
         </div>
+
+        <!-- New Teacher Login Section -->
+        <div class="login-container">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <button type="submit" onclick="teacherLogin()">Login</button>
+        </div>
     </div>
+
     <script>
         function updateTime() {
             const now = new Date();
             const dateTimeStr = now.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true, month: 'long', day: 'numeric', year: 'numeric' });
             document.getElementById('date-time').innerHTML = dateTimeStr;
         }
+
+        function teacherLogin() {
+            // Add your login logic here for teachers
+            // For example, you can retrieve the email and password values
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Add your authentication logic here
+
+            // Example: Display an alert for testing
+            alert(`Teacher Login\nEmail: ${email}\nPassword: ${password}`);
+        }
+
         setInterval(updateTime, 1000); // Update the time every second
         updateTime(); // Initialize with the current time
     </script>
-
 </body>
 </html>
-
-
-
