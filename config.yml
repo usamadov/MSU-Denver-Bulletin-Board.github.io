@@ -1,3 +1,3 @@
-remote_theme: pages-themes/merlot@v0.2.0
-plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
+title: https://msu-denver-bulletin-board.github.io
+description: Welcome to my custom site!
+theme: jekyll-theme-cayman
