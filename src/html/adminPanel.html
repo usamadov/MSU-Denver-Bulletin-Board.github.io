@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/assets/css/adminPanel.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Admin Panel</h1>
+    </header>
+
+    <!-- Tabs -->
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'fileUpload')">File Upload</button>
+        <button class="tablinks" onclick="openTab(event, 'textUpload')">Text Upload</button>
+        <button class="tablinks" onclick="openTab(event, 'uploadedContent')">Uploaded Content</button>
+        
+    </div>
+
+    <!-- Text Upload -->
+    <div id="textUpload" class="tabcontent">
+        <div class="uploadText">
+            <form action="/action_page.php">
+                <div class="form-group">
+                    <label for="userInput">Text Entry:</label>
+                    <textarea id="userInput" name="userInput" rows="4"></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- File Upload -->
+    <div id="fileUpload" class="tabcontent">
+        <div class="uploadFile">
+            <form action="/action_page.php">
+                <div class="form-group">
+                    <label for="fileInput">Upload File</label>
+                    <input type="file" id="fileInput" name="filename">
+                </div>
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+
+    <!-- Files Already Uploaded -->
+    <div id="uploadedContent" class="tabcontent">
+        <div class="uploadedContent">
+        </div>
+    </div>
+
+    <script src="/assets/javascript/openTab.js"></script>
+
+</body>
+</html>
