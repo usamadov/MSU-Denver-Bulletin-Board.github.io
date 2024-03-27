@@ -1,205 +1,31 @@
-<!DOCTYPE HTML>
-
-
-<!-- handles login -->
-<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher Login</title>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
-    <script src="login.js"></script>
-    <style>
-        #logo {
-            max-width: 100px;
-            max-height: 100px;
-            float: right;
-            margin-top: 20px;
-            margin-right: 20px;
-        }
-    </style>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/navigation-buttons.css">
 </head>
+
 <body>
--->
-
-
-
-    <!-- MSU Denver logo -->
-<!--
-    <img id="logo" src="assets/images/MSU_Denver_Roadrunners.svg.png" alt="Logo">
-    <h1>Teacher Login</h1>
-    <form id="loginForm">
-        <label for="email">Email:</label>
-        <input type="email" id="email" required>
-        <label for="password">Password:</label>
-        <input type="password" id="password" required>
-        <button type="submit">Login</button>
-    </form>
-</body>
-</html>
--->
-
-
-<!-- Design for MSU Denver Bulletin board webpage--->
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metropolitan State University of Denver Bulletin Board</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-        }
-        .container {
-            background-color: #0033a0;
-            width: 100%;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-        }
-        .logo-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 80px;
-            background-color: white;
-            z-index: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .date-time {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 16px;
-            color: black;
-            z-index: 2;
-        }
-        .footer-background {
-            position: absolute;
-            width: 100%;
-            height: 80px;
-            background-color: white;
-            bottom: 0;
-            z-index: 1;
-        }
-        .logo {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            z-index: 3;
-        }
-        .bulletin-board {
-            color: #0033a0;
-            font-size: 42px;
-            padding: 20px 60px;
-            text-align: center;
-            border-radius: 5px;
-            background-color: transparent;
-            z-index: 2;
-            position: relative;
-        }
-        .red-text {
-            color: #d50000;
-        }
-
-        /* Additional styles for the login section */
-        .login-container {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: white;
-        }
-
-        /* Styles specifically for the login labels and inputs */
-        .login-container label {
-            color: white;
-            margin-bottom: 5px;
-        }
-
-        .login-container input {
-            margin-bottom: 10px;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            width: 250px;
-        }
-
-        /* Styles specifically for the login button */
-        .login-container button {
-            background-color: #0033a0;
-            color: white;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-
-        .login-container button:hover {
-            background-color: #001f6e;
-        }
-    </style>
-</head>
-<body>
-    <nav>
-        <a href="/MSU-Denver-Bulletin-Board.github.io/index.html">Home</a>
-        <a href="/MSU-Denver-Bulletin-Board.github.io/src/html/teacher_portal.html">Portal</a>
-        <a href="/MSU-Denver-Bulletin-Board.github.io/src/html/test.html">Test</a>
-    </nav>
     <div class="container">
-        <div class="logo-background">
-            <div class="bulletin-board">
-                <span class="red-text">Bulletin</span> Board
-            </div>
-            <div class="date-time" id="date-time"></div>
-        </div> <!-- White rectangle at the top -->
+    <div class="logo-background">
+        <div class="bulletin-board">
+            <span class="red-text">Bulletin</span> Board
+        </div>
+        <div class="date-time" id="date-time"></div>
         <div class="footer-background"></div> <!-- White rectangle at the bottom -->
         <div class="logo">
             <img src="https://cdn.offcampusimages.com/public/upload/eagsvcpcbm1vru1k2u_taxmsbsflnehw4ztweyn_sng.png" alt="MSU Denver Logo" width="230">
         </div>
 
-        <!-- New Teacher Login Section -->
-        <div class="login-container">
-            <label for="email">Email:</label>
-            <input type="email" id="email" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" required>
-            <button type="submit" onclick="teacherLogin()">Login</button>
+        <div class="navigation-buttons">
+            <button onclick="window.location.href='/index.html'">Home</button>
+            <button onclick="window.location.href='/src/html/adminPanel.html'">Admin Panel</button>
+            <button onclick="window.location.href='/src/html/login.html'">Login</button>
         </div>
     </div>
 
-    <script>
-        function updateTime() {
-            const now = new Date();
-            const dateTimeStr = now.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true, month: 'long', day: 'numeric', year: 'numeric' });
-            document.getElementById('date-time').innerHTML = dateTimeStr;
-        }
-
-        function teacherLogin() {
-            // Add your login logic here for teachers
-            // For example, you can retrieve the email and password values
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-            // Add your authentication logic here
-
-            // Example: Display an alert for testing
-            alert(`Teacher Login\nEmail: ${email}\nPassword: ${password}`);
-        }
-
-        setInterval(updateTime, 1000); // Update the time every second
-        updateTime(); // Initialize with the current time
-    </script>
 </body>
 </html>
