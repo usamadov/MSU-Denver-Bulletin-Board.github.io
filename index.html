@@ -1,31 +1,46 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!-- Design for MSU Denver Bulletin board webpage--->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="stylesheet" href="/assets/css/header.css">
-    <link rel="stylesheet" href="/assets/css/navigation-buttons.css">
+    <link rel="stylesheet" href="/assets/css/homePage.css">
+    <link rel="stylesheet" href="/assets/css/adminPanel.css">
+    <link rel="stylesheet" href="/assets/css/login.css">
+    
 </head>
-
 <body>
     <div class="container">
-    <div class="logo-background">
-        <div class="bulletin-board">
-            <span class="red-text">Bulletin</span> Board
+        <div class="logo-background">
+          
+          <div class="dropdown">
+              <button class="dropbtn" onclick="toggleDropdown()">•••</button>
+              <div class="dropdown-content">
+                  <a href="login.html">Login</a>
+                  <a href="adminPanel.html">Admin Panel</a>
+              </div>
+          </div>
+
+            <div class="bulletin-board">
+                <span class="red-text">Bulletin</span> Board
+            </div>
+            <div class="date-time" id="date-time"></div>
         </div>
-        <div class="date-time" id="date-time"></div>
-        <div class="footer-background"></div> <!-- White rectangle at the bottom -->
         <div class="logo">
+          <a href="index.html">
             <img src="https://cdn.offcampusimages.com/public/upload/eagsvcpcbm1vru1k2u_taxmsbsflnehw4ztweyn_sng.png" alt="MSU Denver Logo" width="230">
+          </a>
         </div>
-
-        <div class="navigation-buttons">
-            <button onclick="window.location.href='/index.html'">Home</button>
-            <button onclick="window.location.href='/src/html/adminPanel.html'">Admin Panel</button>
-            <button onclick="window.location.href='/src/html/login.html'">Login</button>
+        <div class="footer-background">
+            <div class="urgent-message">Urgent message: </div>
+            <div class="news-ticker">
+                <p>This is a news ticker that will scroll horizontally. If you to post an urgent message, please click the "Urgent Message" button. If you want to upload a text, please click the "Upload Text" button. If you want to upload an image, please click the "Upload Image" button. If you want to upload a video, please click the "Upload Video" button.
+                </p>
+            </div>
         </div>
+      
     </div>
-
+    <script src="script.js"></script>
 </body>
 </html>
