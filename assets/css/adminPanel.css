@@ -10,11 +10,25 @@ body {
     text-align: center;
     padding: 10px; 
 }
-
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 3;
+}
 
 @media screen and (max-width: 600px) {
     .header {
-        font-size: 18px; /* Adjust font size for smaller screens */
+        font-size: 18px; /* Smaller font size for the header */
+        padding: 10px 50px; /* Increase padding to give more space for the logo */
+        text-align: left; /* Align text to the left to make space for the logo */
+    }
+    .logo img {
+        width: 115px; /* Reduce the size of the logo on smaller screens */
+    }
+    .logo {
+        top: 0;
+        left: 10px; /* Adjust logo position to align with adjusted header padding */
     }
 }
 
