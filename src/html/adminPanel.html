@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
-    <link rel="stylesheet" href="/assets/css/adminPanel.css">
+    <link rel="stylesheet" href="adminPanel.css">
 </head>
-<body>
-
+<body>  
     <header class="header">
         <h1>Admin Panel</h1>
+        <div class="logo">
+            <a href="index.html">
+                <img src="https://cdn.offcampusimages.com/public/upload/eagsvcpcbm1vru1k2u_taxmsbsflnehw4ztweyn_sng.png" alt="MSU Denver Logo" width="230">
+            </a>
+        </div>
     </header>
 
     <!-- Tabs -->
@@ -17,7 +21,7 @@
         <button class="tablinks" onclick="openTab(event, 'fileUpload')">File Upload</button>
         <button class="tablinks" onclick="openTab(event, 'textUpload')">Text Upload</button>
         <button class="tablinks" onclick="openTab(event, 'uploadedContent')">Uploaded Content</button>
-        
+        <button class="tablinks" onclick="openTab(event, 'urgentMessage')">Urgent Message</button> <!-- New Urgent Message Tab -->
     </div>
 
     <!-- Text Upload -->
@@ -32,7 +36,6 @@
             </form>
         </div>
     </div>
-
 
     <!-- File Upload -->
     <div id="fileUpload" class="tabcontent">
@@ -53,7 +56,20 @@
         </div>
     </div>
 
-    <script src="/assets/javascript/openTab.js"></script>
+    <!-- Urgent Message -->
+    <div id="urgentMessage" class="tabcontent">
+        <div class="urgentMessageForm">
+            <form action="/action_page.php">
+                <div class="form-group">
+                    <label for="urgentMessageInput">Urgent Message:</label>
+                    <textarea id="urgentMessageInput" name="urgentMessageInput" rows="4"></textarea>
+                </div>
+                <button type="submit">Publish</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="openTab.js"></script>
 
 </body>
 </html>
