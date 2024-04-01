@@ -44,56 +44,8 @@ body, html {
     display: flex; /* Ensures inline arrangement */
     align-items: center; /* Vertically center content */
 }
-  
-.urgent-message {
-    color: #d50000; /* Or any color that indicates urgency */
-    background-color: white; /* Set the background color of the box */
-    padding: 5px 5px; /* Add some padding inside the box */
-    margin-left: -1px; /* Space from the left edge of the footer */
-    font-size: 30px; /* Or any size that fits your design */
-    flex-shrink: 0; /* Prevents the message from shrinking */
-    border-radius: 100px; /* Optional: adds rounded corners to the box */
-    
-    z-index: 2;
-}
 
 
-  .ticker-container {
-      width: calc(100%); /* Adjust based on the size of your urgent message */
-      padding: 10px 11px; /* Add some padding inside the box */
-      overflow: hidden;
-      margin-left: 10px; /* Space between the message and the ticker */
-      white-space: nowrap; /* Ensures ticker text stays in one line */
-      
-  }
-
-.news-ticker {
-    position: absolute;
-    right: 0; /* Start from the right side */
-    left: 0; /* Stretch across to the left side */
-    white-space: nowrap;
-    overflow: hidden;
-    box-sizing: border-box;
-    padding: 5px 5px; /* Add some padding inside the box */
-    box-shadow: 0px 2px 400px rgba(0,0,0,0.5); /* Optional: adds a slight shadow for depth */
-}
-
-
-  .news-ticker p {
-    display: inline-block;
-    padding-left: 100%; /* Start off-screen to the right */
-    animation: ticker linear infinite; /* We'll set the duration with JavaScript */
-    font-size: 20px; /* Or any size that fits your design */
-}
-
-  @keyframes ticker {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
 
 
 
@@ -116,36 +68,43 @@ body, html {
 .red-text {
     color: #d50000;
 }
-.login-container {
-    margin-top: 280px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-}
-.login-container label {
-    color: white;
-    margin-bottom: 5px;
-}
-.login-container input {
-    margin-bottom: 10px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    width: 250px;
-}
-.login-container button {
-    background-color: #0033a0;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-.login-container button:click {
-    background-color: #001f6e;
+
+
+
+
+/**************************************************/
+/*Adding ticker for urgent message*/
+
+.urgent-message-ticker {
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
+@keyframes ticker {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.urgent-message-ticker span {
+    display: inline-block;
+    padding-left: 100%; /* Ensures the text starts offscreen */
+    animation: ticker linear infinite;
+}
+
+/* Adjust speed based on content length */
+.urgent-message-ticker span.long-text {
+    animation-duration: 20s; /* Longer duration for longer text */
+}
+
+.urgent-message-ticker span.short-text {
+    animation-duration: 10s; /* Shorter duration for shorter text */
+}
+
+/**************************************************/
+
+
+/**************************************************/
 /* Positioning and styling for the dropdown */
 .logo-background .dropdown {
     position: absolute;
@@ -193,6 +152,7 @@ body, html {
 /* Show the dropdown menu and make button bright on hover */
 .logo-background .dropdown:hover {
     opacity: 1; /* Make it fully opaque (bright) */
+    color: white;
 }
 
 /* Change the text color of the dropdown button when hovered */
@@ -205,11 +165,7 @@ body, html {
     opacity: 1; /* Make it fully opaque for active state */
 }
 
-/* Brighten the dropdown button on hover */
-.logo-background .dropbtn:hover {
-    color: black; /* Text color brightens */
-    opacity: 1; /* Dropdown brightens - this will now be secondary to the .active style */
-}
+
 
 @media (max-width: 710px) {
     .logo-background {
@@ -243,4 +199,5 @@ body, html {
         opacity: 1; /* Ensure the dropdown is fully opaque */
     }
 }
+
 
