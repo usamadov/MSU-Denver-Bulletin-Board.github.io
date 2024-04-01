@@ -60,16 +60,32 @@ window.onclick = function(event) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const tickerText = document.querySelector('.news-ticker p');
-    if (tickerText) {
-        const tickerSpeed = 500; // Adjust the speed as needed: pixels per second
-        const tickerLength = tickerText.offsetWidth; // Get the width of the ticker text
-        const viewportWidth = window.innerWidth; // Get the width of the viewport
-        const totalLength = tickerLength + viewportWidth; // Total length for the animation
-        const animationDuration = totalLength / tickerSpeed; // Calculate duration
-        tickerText.style.animationDuration = `${animationDuration}s`; // Apply duration
-    }
+
+
+/*urgent message ticker */
+function displayUrgentMessage() {
+  const message = localStorage.getItem('urgentMessage');
+  console.log(localStorage.getItem('urgentMessage')); // Should log the stored message, if any
+
+  if (message) {
+      const messageDisplay = document.getElementById('urgentMessageDisplay');
+      const messageSpan = document.createElement('span');
+      messageSpan.textContent = message;
+      // Add a class based on text length
+      messageSpan.className = message.length > 50 ? 'long-text' : 'short-text';
+      messageDisplay.appendChild(messageSpan);
+  }
+}
+document.addEventListener('DOMContentLoaded', function() {
+    displayUrgentMessage();
 });
+
+
+// Call this function on page load
+displayUrgentMessage();
+// Call this function every second to update the ticker  
+setInterval(displayUrgentMessage, 1000);
+
+
 
 
