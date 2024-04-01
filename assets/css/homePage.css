@@ -4,7 +4,7 @@ body, html {
     height: 100%;
 }
 .container {
-    background-color: #0033a0;
+    background-color: #00428c;
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -104,7 +104,7 @@ body, html {
     z-index: 3;
 }
 .bulletin-board {
-    color: #0033a0;
+    color: #00428c;
     font-size: 42px;
     padding: 20px 60px;
     text-align: center;
