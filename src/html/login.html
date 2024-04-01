@@ -4,15 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Authentication</title>
-    <link rel="stylesheet" href="/assets/css/login.css">
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
     <header class="header">
-        <h1>Authentication</h1>
         <div class="logo">
             <a href="index.html">
                 <img src="https://cdn.offcampusimages.com/public/upload/eagsvcpcbm1vru1k2u_taxmsbsflnehw4ztweyn_sng.png" alt="MSU Denver Logo" width="230">
             </a>
+        </div>
+        <h1>Authentication</h1>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown()">•••</button>
+            <div class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="adminPanel.html">Admin Panel</a>
+            </div>
         </div>
     </header>
 
@@ -32,6 +39,6 @@
         </form>
     </div>
 
-    <script src="/assets/javascript/login.js"></script>
+    <script src="login.js"></script>
 </body>
 </html>
